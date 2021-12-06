@@ -12,7 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+$controller_path = 'App\Http\Controllers';
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// 入力ページ
+Route::get('/', $controller_path.'\InquiryController@index');
+
+// 確認ページ
+Route::get('/confirm', $controller_path.'\InquiryController@confirm');
+
+// 完了ページ
+Route::get('/thanks', $controller_path.'\InquiryController@thanks');

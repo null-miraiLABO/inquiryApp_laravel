@@ -9,17 +9,29 @@
         
         <form method="post" action="/confirm">
 			@csrf
-			<div>
+			<p>
 				お名前:<br>
-				<input type="text" name="name"><br>
-			</div>
-			<div>
+				<input type="text" name="name">
+			</p>
+			<p>
+				フリガナ:<br>
+				<input type="text" name="hurigana">
+			</p>
+			<p>
 				メール:<br>
-				<input type="text" name="mail"><br>
-			</div>
-			<div>
-				<input type="submit" value="確認画面へ"><br>
-			</div>
+				<input type="text" name="mail">
+			</p>
+			<p>
+				電話番号:<br>
+				<input type="text" name="phoneNumber">
+			</p>
+			<p>
+				お問い合わせ内容:<br>
+				<textarea name="message"></textarea>
+			</p>
+			<p>
+				<input type="submit" value="確認画面へ">
+			</p>
 		</form>
 
     </body>

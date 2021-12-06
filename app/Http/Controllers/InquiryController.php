@@ -11,10 +11,9 @@ class InquiryController extends Controller
     }
 
     public function confirm(Request $request){
-        $inputs = $request->name;
-        $data = ['inputs' => $inputs];
+        $data = $request->all();
 
-        return view('inquiry.confirm', $data);
+        return view('inquiry.confirm', ['data' => $data]);
     }
 
     public function thanks(){

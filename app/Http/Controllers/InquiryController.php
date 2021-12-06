@@ -9,9 +9,14 @@ class InquiryController extends Controller
     public function index(){
         return view('inquiry.index');
     }
-    public function confirm(){
-        return view('inquiry.confirm');
+
+    public function confirm(Request $request){
+        $inputs = $request->name;
+        $data = ['inputs' => $inputs];
+
+        return view('inquiry.confirm', $data);
     }
+
     public function thanks(){
         return view('inquiry.thanks');
     }

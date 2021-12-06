@@ -18,7 +18,7 @@ $controller_path = 'App\Http\Controllers';
 Route::get('/', $controller_path.'\InquiryController@index');
 
 // 確認ページ
-Route::get('/confirm', $controller_path.'\InquiryController@confirm');
+Route::post('/confirm', $controller_path.'\InquiryController@confirm');
 
 // 完了ページ
-Route::get('/thanks', $controller_path.'\InquiryController@thanks');
+Route::post('/thanks', $controller_path.'\InquiryController@thanks');

@@ -4,7 +4,8 @@
     </head>
 
     <body>
-        <h1>お問い合わせ</h1>
-        <p>this is index.php</p>
+        <h1>確認</h1>
+        <p>this is confirm.php</p>
+        <p>{{$inputs}}</p>
     </body>
 </html>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Mail\InquirySendmail;
 
 class InquiryController extends Controller
 {
@@ -16,7 +17,15 @@ class InquiryController extends Controller
         return view('inquiry.confirm', ['data' => $data]);
     }
 
-    public function thanks(){
-        return view('inquiry.thanks');
+    public function thanks(Request $request){
+        $data = $request->all();
+
+        //入力されたメールアドレスにメールを送信
+        \Mail::to("********@gmail.com")->send(new InquirySendmail($data));
+
+        //再送信を防ぐためにトークンを再発行
+        $request->session()->regenerateToken();
+
+        return view('inquiry.thanks', ['data' => $data]);
     }
 }

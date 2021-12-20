@@ -71,15 +71,19 @@
 		console.log(key + "=" + Err[key]);
 	}
 	
+	reload_validation_flag = false;
+	<?php echo "reload_validation_flag = true;"; ?>
 	
 	// 読み込み時エラー確認
-	Err.company = empty_check(company.value);
-	Err.name = empty_check(nm.value);
-	Err.kana = empty_check(kana.value);
-	Err.mail = empty_check(mail.value);
-	Err.phoneNumber = number_check(phoneNumber.value);
-	Err.message = empty_check(message.value);
-	ErrCheck_flag(Err);
+	if (reload_validation_flag){
+		Err.company = empty_check(company.value);
+		Err.name = empty_check(nm.value);
+		Err.kana = empty_check(kana.value);
+		Err.mail = empty_check(mail.value);
+		Err.phoneNumber = number_check(phoneNumber.value);
+		Err.message = empty_check(message.value);
+		ErrCheck_flag(Err);
+	}
 	
 
 	// 各inputsのエラーチェック
